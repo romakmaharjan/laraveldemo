@@ -52,6 +52,7 @@
                 <th>Email</th>
                 <th>Phone</th>
                 <th>Address</th>
+                <th>Action</th>
             </tr>
             @foreach($studentData as $student)
             <tr>
@@ -59,6 +60,10 @@
                 <td>{{ $student-> email}}</td>
                 <td>{{ $student-> phone}}</td>
                 <td>{{ $student-> address}}</td>
+                <td>
+                    <a href="{{ url('edit/'.$student->id)}}">Edit</a>
+                    <a href="{{ url ('delete/'.$student->id)}}">Delete</a>
+                </td>
             </tr>
             @endforeach
         </table>

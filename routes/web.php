@@ -13,8 +13,13 @@ use App\Http\Controllers\ApplicationController;
 |
 */
 
-Route::get('/', [ApplicationController:: class, 'index'])->name('index');
+Route::get('/', [ApplicationController::class, 'index'])->name('index');
 Route::post('/', [ApplicationController:: class, 'store'])->name('store');
+
+Route::get('/edit/{id}',[ApplicationController:: class, 'edit']);
+Route::post('/edit/{id}',[ApplicationController:: class, 'update']);
+
+Route::get('/delete/{id}',[ApplicationController:: class, 'delete']);
 
 Route::get('/about', [ApplicationController:: class, 'about'])->name('about');
 
